@@ -6,7 +6,7 @@ function JobDetails() {
     <div className="bg-[#FFEEEE]">
       <Navbar />
       <div className="container mx-auto px-3 md:px-12 pb-12">
-        <div className="text-center text-xl md:text-3xl font-medium bg-white shadow p-4 md:p-10 -translate-y-[15px]">
+        <div className="text-center text-xl md:text-3xl font-medium bg-white shadow md:-translate-y-[15px] p-4 md:p-10 mt-5 md:mt-0">
           WordPress Development work from home job/internship at Adyaka Infosec Private Limited
         </div>
         <div className="shadow bg-white p-4 md:p-10 mt-10">
@@ -15,7 +15,7 @@ function JobDetails() {
               <p className="flex gap-3 text-gray-500">
                 <span>1w ago</span>
                 <span>Full Time</span>
-                <span>Google</span>
+                <span>Microsoft</span>
               </p>
               <p className="text-xl md:text-3xl font-semibold">WordPress Development </p>
               <p className="text-red-500 font-medium">Bangalore | India</p>

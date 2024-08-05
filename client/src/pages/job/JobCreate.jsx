@@ -95,7 +95,7 @@ function JobCreate() {
           </form>
         </div>
         <div className="fixed top-0 right-0 w-3/6 hidden md:block">
-          <img className="w-full h-screen object-cover" src="/images/job-register.png" alt="" />
+          <img className="w-full h-screen object-cover" src="/images/job-hero.webp" alt="" />
           <h1 className="absolute mx-32 text-4xl text-white text-center font-semibold inline-block top-20">
             Recruiter add job details here
           </h1>

@@ -6,7 +6,7 @@ function JobCard() {
     <div className="flex flex-col md:flex-row justify-between md:items-center gap-4 p-3 md:p-6 job-card">
       <div className="flex gap-3 md:gap-6">
         <div>
-          <img src="https://testfree.in/assets/plugins/image/logo_small.png" width={40} />
+          <img src="images/company.png" width={40} />
         </div>
         <div className="flex flex-col gap-2 font-semibold">
           <p className="font-medium text-xl">Frontend Developer</p>

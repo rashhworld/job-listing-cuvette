@@ -1,25 +1,25 @@
-const express = require('express')
-const mongoose = require('mongoose')
-const bodyParser = require('body-parser')
-var cors = require('cors')
-const dotenv = require('dotenv')
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+var cors = require('cors');
+const dotenv = require('dotenv');
 
-const userRoutes = require('./src/routes/User')
-const jobRoutes = require('./src/routes/Job')
+const userRoutes = require('./src/routes/User');
+const jobRoutes = require('./src/routes/Job');
 const errorHandler = require('./src/middlewares/errorHandler');
 
-const app = express()
-dotenv.config()
+const app = express();
+dotenv.config();
 
-app.use(cors())
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.use(userRoutes)
-app.use(jobRoutes)
+app.use(userRoutes);
+app.use(jobRoutes);
 
 app.get('/health', (req, res) => {
-    res.send({ status: "success", msg: "API is working well." })
+    res.send({ status: "success", msg: "API is working well." });
 })
 
 app.use((req, res, next) => {
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 app.use(errorHandler);
 
-const port = process.env.PORT || 1000
+const port = process.env.PORT || 1000;
 app.listen(port, () => {
     mongoose.connect(process.env.DB_URL).then(() => console.log('Server is running :)')).catch((error) => console.log(error))
 })

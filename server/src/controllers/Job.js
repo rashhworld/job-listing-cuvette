@@ -1,8 +1,15 @@
 const Job = require('../models/Job')
 
-const userDashboard = async (req, res, next) => {
+const fetchAllJobs = async (req, res, next) => {
     try {
-        res.json({ status: "success", user: req.user });
+        const { title, skills } = req.body;
+        let query = {};
+
+        if (title) query.jobPosition = { $regex: title, $options: 'i' };
+        if (skills && skills.length > 0) query.skillsRequired = { $all: skills };
+
+        const jobs = await Job.find(query);
+        res.json({ status: 'success', data: jobs });
     } catch (err) {
         next(err);
     }
@@ -21,4 +28,4 @@ const createJob = async (req, res, next) => {
     }
 }
 
-module.exports = { userDashboard, createJob }
+module.exports = { fetchAllJobs, createJob }

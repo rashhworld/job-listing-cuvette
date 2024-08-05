@@ -9,7 +9,7 @@ const loginUser = async (req, res, next) => {
 
         if (userdata) {
             if (await bcrypt.compare(password, userdata.password)) {
-                const token = jwt.sign({ uid: userdata._id }, process.env.JWT_SECRET);
+                const token = jwt.sign({ uid: userdata._id, name: userdata.name }, process.env.JWT_SECRET);
                 res.json({ status: "success", msg: "Login successful.", token });
             } else {
                 throw Object.assign(Error("Wrong password entered"), { code: 401 });
