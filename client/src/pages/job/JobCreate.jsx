@@ -54,7 +54,7 @@ function JobCreate() {
   };
 
   const isValidImage = (value) => {
-    const logoRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|webp))$/i;
+    const logoRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|svg|webp))$/i;
     return logoRegex.test(value);
   };
 
@@ -76,7 +76,7 @@ function JobCreate() {
         newError[key] = 'This field is required';
         isValid = false;
       } else if (key === 'companyLogo' && !isValidImage(value)) {
-        newError[key] = 'Logo must be a valid URL ending in png, jpg, jpeg, or webp';
+        newError[key] = 'Logo must be a valid URL ending in png, jpg, jpeg, svg or webp';
         isValid = false;
       } else if (key === 'monthlySalary' && !isValidSalary(value)) {
         newError[key] = 'Monthly salary must be a number and greater than 0';

@@ -20,9 +20,9 @@ const validateJob = (req, res, next) => {
 
         validateString(companyName, 'Company name');
 
-        const logoRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|webp))$/i;
+        const logoRegex = /^(https?:\/\/.*\.(?:png|jpg|jpeg|svg|webp))$/i;
         if (!companyLogo || !logoRegex.test(companyLogo)) {
-            errors.push('Company logo must be a valid URL ending in png, jpg, jpeg, or webp');
+            errors.push('Company logo must be a valid URL ending in png, jpg, jpeg, svg, or webp');
         }
 
         validateString(jobPosition, 'Job position');

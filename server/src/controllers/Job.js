@@ -1,5 +1,18 @@
 const Job = require('../models/Job')
 
+const createJob = async (req, res, next) => {
+    try {
+        const userId = req.user;
+        const { companyName, companyLogo, jobPosition, monthlySalary, jobDuration, jobType, locationType, jobLocation, jobDescription, aboutCompany, skillsRequired, additionalInfo } = req.body;
+
+        await Job.create({ userId, companyName, companyLogo, jobPosition, monthlySalary, jobDuration, jobType, locationType, jobLocation, jobDescription, aboutCompany, skillsRequired, additionalInfo });
+
+        res.json({ status: "success", msg: "Job created successfully." });
+    } catch (err) {
+        next(err);
+    }
+}
+
 const fetchAllJobs = async (req, res, next) => {
     try {
         const { title, skills } = req.body;
@@ -15,17 +28,14 @@ const fetchAllJobs = async (req, res, next) => {
     }
 }
 
-const createJob = async (req, res, next) => {
+const fetchJobsById = async (req, res, next) => {
     try {
-        const userId = req.user;
-        const { companyName, companyLogo, jobPosition, monthlySalary, jobDuration, jobType, locationType, jobLocation, jobDescription, aboutCompany, skillsRequired, additionalInfo } = req.body;
-
-        await Job.create({ userId, companyName, companyLogo, jobPosition, monthlySalary, jobDuration, jobType, locationType, jobLocation, jobDescription, aboutCompany, skillsRequired, additionalInfo });
-
-        res.json({ status: "success", msg: "Job created successfully." });
+        const { jobId } = req.params;
+        const jobs = await Job.findById(jobId);
+        res.json({ status: 'success', data: jobs });
     } catch (err) {
         next(err);
     }
 }
 
-module.exports = { fetchAllJobs, createJob }
+module.exports = { createJob, fetchAllJobs, fetchJobsById }

@@ -17,7 +17,7 @@ function App() {
         <Route path="user/signin" element={<UserLogin />} />
         <Route path="user/signup" element={<UserRegister />} />
         <Route path="job/create" element={<JobCreate />} />
-        <Route path="job/details" element={<JobDetails />} />
+        <Route path="job/details/:jid" element={<JobDetails />} />
       </Routes>
     </Router>
   );

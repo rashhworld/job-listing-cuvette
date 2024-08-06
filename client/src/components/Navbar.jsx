@@ -22,7 +22,7 @@ function Navbar({ setUserdata }) {
           {userName ? (
             <>
               <Link to="/user/signin" className="text-white font-medium" onClick={() => localStorage.removeItem('authJwtToken')}>Logout</Link>
-              <span className="text-white font-medium">Hello! {userName.split(" ")[0]}</span>
+              <span className="text-white font-medium">Hello! <span className="hidden md:inline-block">{userName.split(" ")[0]}</span></span>
               <img className="w-10 h-10 rounded-full" src="https://lh3.googleusercontent.com/a/ACg8ocJqGE7TTTgRGDZXOPu264XNfvEICCKC4SMPK6Lum4W5Aq2B7X4J=s260-c-no" />
             </>
           ) : (
