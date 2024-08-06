@@ -17,3 +17,21 @@ export const fetchAllJobsApi = async ({ title, skills }) => {
         handleApiErr(error, navigate);
     }
 };
+
+export const createJobApi = async (jobData, token) => {
+    try {
+        const response = await axios.post(`${baseURL}/job/create`, jobData, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        const { status, msg } = response.data;
+        if (status === 'success') {
+            toast.success(msg);
+            return true;
+        } else {
+            handleApiRes(response.data);
+        }
+    } catch (error) {
+        handleApiErr(error, navigate);
+    }
+};

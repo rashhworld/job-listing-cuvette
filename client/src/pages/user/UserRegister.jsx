@@ -55,19 +55,19 @@ function UserRegister() {
               <p className="">Your personal job finder is here</p>
             </div>
             <div>
-              <input type="text" id="name" value={input.name} onChange={(e) => setInput({ ...input, name: e.target.value })} className="block w-full p-3 text-gray-900 border border-gray-500 rounded-lg  text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name" />
+              <input type="text" id="name" value={input.name} onChange={(e) => setInput({ ...input, name: e.target.value })} className="w-full border border-gray-400 rounded-lg p-3" placeholder="Name" />
               <label className="text-sm text-red-500 font-medium" htmlFor="email">{error.name}</label>
             </div>
             <div>
-              <input type="email" id="email" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} className="block w-full p-3 text-gray-900 border border-gray-500 rounded-lg  text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" />
+              <input type="email" id="email" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} className="w-full border border-gray-400 rounded-lg p-3" placeholder="Email" />
               <label className="text-sm text-red-500 font-medium" htmlFor="email">{error.email}</label>
             </div>
             <div>
-              <input type="tel" id="mobile" value={input.mobile} onChange={(e) => setInput({ ...input, mobile: e.target.value })} className="block w-full p-3 text-gray-900 border border-gray-500 rounded-lg  text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Mobile" />
+              <input type="tel" id="mobile" value={input.mobile} onChange={(e) => setInput({ ...input, mobile: e.target.value })} className="w-full border border-gray-400 rounded-lg p-3" placeholder="Mobile" />
               <label className="text-sm text-red-500 font-medium" htmlFor="email">{error.mobile}</label>
             </div>
             <div>
-              <input type="password" id="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} className="block w-full p-3 text-gray-900 border border-gray-500 rounded-lg  text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Password" />
+              <input type="password" id="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} className="w-full border border-gray-400 rounded-lg p-3" placeholder="Password" />
               <label className="text-sm text-red-500 font-medium" htmlFor="email">{error.password}</label>
             </div>
             <div className="flex items-center">
@@ -75,7 +75,7 @@ function UserRegister() {
               <label htmlFor="terms" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">By creating an account, I agree to our terms of use and privacy policy.</label>
             </div>
             <div className="mt-3">
-              <button type="submit" className="w-2/5 text-white bg-[#ED5353] focus:ring-4 focus:outline-none font-medium rounded text-xl px-5 py-2 text-center">Sign Up</button>
+              <button type="submit" className="w-2/5 text-white bg-[#ED5353] font-medium rounded text-xl px-5 py-2 text-center">Sign Up</button>
             </div>
             <div>
               <p> Already have an account?

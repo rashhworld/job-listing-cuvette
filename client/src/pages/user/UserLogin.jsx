@@ -50,15 +50,15 @@ function UserLogin() {
               <p className="">Your personal job finder is here</p>
             </div>
             <div>
-              <input type="email" id="email" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} className="block w-full p-3 text-gray-900 border border-gray-500 rounded-lg  text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" />
+              <input type="email" id="email" value={input.email} onChange={(e) => setInput({ ...input, email: e.target.value })} className="w-full border border-gray-400 rounded-lg p-3" placeholder="Email" />
               <label className="text-sm text-red-500 font-medium" htmlFor="email">{error.email}</label>
             </div>
             <div>
-              <input type="password" id="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} className="block w-full p-3 text-gray-900 border border-gray-500 rounded-lg  text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Password" />
+              <input type="password" id="password" value={input.password} onChange={(e) => setInput({ ...input, password: e.target.value })} className="w-full border border-gray-400 rounded-lg p-3" placeholder="Password" />
               <label className="text-sm text-red-500 font-medium" htmlFor="password">{error.password}</label>
             </div>
             <div className="mt-3">
-              <button type="submit" className="w-2/5 text-white bg-[#ED5353] focus:outline-none font-medium rounded text-xl px-5 py-2 text-center">Sign In</button>
+              <button type="submit" className="w-2/5 text-white bg-[#ED5353] font-medium rounded text-xl px-5 py-2 text-center">Sign In</button>
             </div>
             <div>
               <p>Don't have an account?

@@ -29,7 +29,7 @@ function JobFilter({ setTitle, setSkills }) {
   return (
     <div className="p-3 md:p-8 md:px-24 mt-10 job-filter">
       <div className="flex items-center mb-4">
-        <input type="text" className="w-full px-4 py-4 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" value={selectedTitle} onChange={(e) => setSelectedTitle(e.target.value)} placeholder="Type any job title" />
+        <input type="text" className="w-full px-4 py-4 border border-gray-300 rounded" value={selectedTitle} onChange={(e) => setSelectedTitle(e.target.value)} placeholder="Type any job title" />
       </div>
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="">
