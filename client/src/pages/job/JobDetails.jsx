@@ -28,7 +28,7 @@ function JobDetails() {
           {jobPosition} {locationType} job/internship at {companyName}
         </div>
         <div className="shadow bg-white p-4 md:p-10 mt-10">
-          <div className="flex justify-between items-center gap-2">
+          <div className="flex flex-col md:flex-row justify-between items-end md:items-center gap-2">
             <div className="flex flex-col gap-3">
               <p className="flex items-center gap-3 font-medium text-gray-500">
                 <span>{moment(updatedAt).fromNow()}</span>

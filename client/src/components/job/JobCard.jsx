@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function JobCard({ JobData }) {
+function JobCard({ userData, JobData }) {
   return (
     <>
       {JobData.length > 0 ? JobData.map((data, index) => (
@@ -31,8 +31,11 @@ function JobCard({ JobData }) {
                 );
               })}
             </div>
-            <div className="">
-              <Link to={`/job/details/${data._id}`} className="bg-[#ED5353] text-white py-1.5 px-3">View details</Link>
+            <div className="flex items-center gap-3">
+              {userData.token && (
+                <Link to={`/job/update/${data._id}`} className="border border-[#ED5353] text-[#ED5353] font-semibold rounded py-1.5 px-6">Edit job</Link>
+              )}
+              <Link to={`/job/details/${data._id}`} className="bg-[#ED5353] border border-[#ED5353] text-white rounded py-1.5 px-6">View details</Link>
             </div>
           </div>
         </div>

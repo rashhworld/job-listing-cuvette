@@ -26,7 +26,7 @@ function Homepage() {
       <div className="container mx-auto p-4 md:px-12">
         <JobFilter setTitle={setTitle} setSkills={setSkills} />
         <div className="flex flex-col gap-5 my-[70px]">
-          <JobCard JobData={JobData} />
+          <JobCard JobData={JobData} userData={userData} />
         </div>
       </div>
     </>

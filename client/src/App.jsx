@@ -7,6 +7,7 @@ import UserLogin from "./pages/user/UserLogin";
 import UserRegister from "./pages/user/UserRegister";
 import JobCreate from "./pages/job/JobCreate";
 import JobDetails from "./pages/job/JobDetails";
+import JobUpdate from "./pages/job/JobUpdate.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="user/signup" element={<UserRegister />} />
         <Route path="job/create" element={<JobCreate />} />
         <Route path="job/details/:jid" element={<JobDetails />} />
+        <Route path="job/update/:jid" element={<JobUpdate />} />
       </Routes>
     </Router>
   );

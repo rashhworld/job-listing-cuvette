@@ -211,7 +211,7 @@ function JobCreate() {
                     {selectedSkills.map((skill, index) => (
                       <div key={index} className="flex items-center gap-2 bg-red-100 filter-item">
                         <span className="ps-2">{skill}</span>
-                        <button className="flex justify-center items-center bg-red-500 h-[35px] w-[35px]" onClick={() => removeSelectedSkill(skill)}>
+                        <button type="button" className="flex justify-center items-center bg-red-500 h-[35px] w-[35px]" onClick={() => removeSelectedSkill(skill)}>
                           <img src="/icons/x-mark.png" width={15} alt="" />
                         </button>
                       </div>

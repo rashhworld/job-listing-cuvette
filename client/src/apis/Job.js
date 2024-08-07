@@ -50,3 +50,21 @@ export const fetchJobsByIdApi = async (jobId) => {
         handleApiErr(error, navigate);
     }
 };
+
+export const updateJobApi = async (jid, jobData, token) => {
+    try {
+        const response = await axios.patch(`${baseURL}/job/update/${jid}`, jobData, {
+            headers: { Authorization: `Bearer ${token}` }
+        });
+
+        const { status, msg } = response.data;
+        if (status === 'success') {
+            toast.success(msg);
+            return true;
+        } else {
+            handleApiRes(response.data);
+        }
+    } catch (error) {
+        handleApiErr(error, navigate);
+    }
+};
