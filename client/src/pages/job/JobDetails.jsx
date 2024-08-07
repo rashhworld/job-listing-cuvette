@@ -46,11 +46,11 @@ function JobDetails() {
           </div>
           <div className="py-5 flex gap-16">
             <p className="flex flex-col">
-              <span className="text-gray-500">Stipend</span>
+              <span className="flex gap-1 text-gray-500"><img src="/icons/money.svg" width={20} alt="money icon" />Stipend</span>
               <span>₹{monthlySalary}/month</span>
             </p>
             <p className="flex flex-col">
-              <span className="text-gray-500">Duration</span>
+              <span className="flex gap-1 text-gray-500"><img src="/icons/calender.svg" width={15} alt="calender icon" />Duration</span>
               <span>{jobDuration}</span>
             </p>
           </div>
@@ -65,7 +65,7 @@ function JobDetails() {
             </div>
             <div>
               <p className="font-semibold py-3">Skill(s) Required</p>
-              <p className="flex gap-3">
+              <p className="flex flex-wrap gap-3">
                 {skillsRequired && skillsRequired.map((skill, index) => (
                   <span className="bg-[#FFEEEE] rounded-full px-5 py-1" key={index}>{skill}</span>
                 ))}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { skills } from '../../utils/skills';
 import { createJobApi } from "../../apis/Job";
 import useAuth from '../../hooks/useAuth';
 
@@ -7,7 +8,6 @@ function JobCreate() {
   const token = useAuth();
   const navigate = useNavigate();
 
-  const skills = ["React.js", "Node.js", "Express.js", "Tailwind", "Bootstrap"];
   const validJobTypes = ["Full-Time", "Part-Time", "Internship"];
   const validLocationTypes = ["On-Site", "Remote", "Hybrid"];
 
@@ -106,9 +106,12 @@ function JobCreate() {
 
   return (
     <div className="flex flex-col">
+      <Link to="/" className="absolute top-5 left-5 bg-gray-50 hover:bg-gray-200 p-2 px-2.5 rounded-lg">
+        <img src="/icons/arrow-left.svg" width={15} alt="Go back" />
+      </Link>
       <div className="flex flex-row h-full">
-        <div className="w-full md:w-3/6 p-5 md:px-20 md:py-10">
-          <h2 className="font-semibold text-4xl mb-8">Add job description</h2>
+        <div className="w-full md:w-3/6 p-5 pt-16 md:px-20 md:pt-20">
+          <h2 className="font-semibold text-3xl md:text-4xl mb-8">Add job description</h2>
           <form className="space-y-4" onSubmit={validateForm} autoComplete="off">
             <div className="md:flex md:items-center">
               <label className="block font-medium md:w-2/5 mb-1 md:mb-0 pr-4" htmlFor="companyName">Company Name</label>
@@ -212,7 +215,7 @@ function JobCreate() {
                       <div key={index} className="flex items-center gap-2 bg-red-100 filter-item">
                         <span className="ps-2">{skill}</span>
                         <button type="button" className="flex justify-center items-center bg-red-500 h-[35px] w-[35px]" onClick={() => removeSelectedSkill(skill)}>
-                          <img src="/icons/x-mark.png" width={15} alt="" />
+                          <img src="/icons/x-mark.svg" width={15} alt="" />
                         </button>
                       </div>
                     ))}

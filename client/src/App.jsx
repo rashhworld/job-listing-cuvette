@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,9 +10,18 @@ import JobCreate from "./pages/job/JobCreate";
 import JobDetails from "./pages/job/JobDetails";
 import JobUpdate from "./pages/job/JobUpdate.jsx";
 
+const ScrollToTop = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [useLocation()]);
+
+  return null;
+};
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <ToastContainer position="bottom-center" theme="colored" closeButton={false} />
       <Routes>
         <Route path="/" element={<Homepage />} />
