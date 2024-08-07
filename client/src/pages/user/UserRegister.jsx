@@ -8,8 +8,11 @@ function UserRegister() {
   const [error, setError] = useState({ name: "", email: "", mobile: "", password: "" });
 
   const userRegister = async () => {
-    const data = await userRegisterApi(input);
-    if (data) navigate('/user/signin');
+    const token = await userRegisterApi(input);
+    if (token) {
+      localStorage.setItem('authJwtToken', token);
+      navigate('/');
+    }
   };
 
   function validatePhone(phone) {
@@ -47,6 +50,9 @@ function UserRegister() {
 
   return (
     <div className="h-screen flex flex-col">
+      <Link to="/" className="absolute top-5 left-5 bg-gray-50 hover:bg-gray-200 p-2 px-2.5 rounded-lg">
+        <img src="/icons/arrow-left.svg" width={15} alt="Go back" />
+      </Link>
       <div className="flex flex-row h-full">
         <div className="w-full sm:w-1/2 p-5 flex justify-center items-center">
           <form className="w-full md:w-3/4 flex flex-col gap-4" onSubmit={validateForm}>

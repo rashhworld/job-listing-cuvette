@@ -22,10 +22,10 @@ export const userRegisterApi = async (userData) => {
     try {
         const response = await axios.post(`${baseURL}/user/register`, userData);
 
-        const { status, msg } = response.data;
+        const { status, msg, token } = response.data;
         if (status === 'success') {
             toast.success(msg);
-            return true;
+            return token;
         } else {
             handleApiRes(response.data);
         }

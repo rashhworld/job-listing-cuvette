@@ -29,8 +29,9 @@ const registerUser = async (req, res, next) => {
             throw Object.assign(Error("User with this email already exists"), { code: 409 });
         } else {
             const hashedPassword = await bcrypt.hash(password, 10);
-            await User.create({ name, email, mobile, password: hashedPassword });
-            res.json({ status: "success", msg: "User registred successfully." });
+            const userdata = await User.create({ name, email, mobile, password: hashedPassword });
+            const token = jwt.sign({ uid: userdata._id, name: userdata.name }, process.env.JWT_SECRET);
+            res.json({ status: "success", msg: "User registred successfully.", token });
         }
     } catch (err) {
         next(err);

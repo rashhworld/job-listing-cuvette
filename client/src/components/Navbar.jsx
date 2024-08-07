@@ -25,10 +25,10 @@ function Navbar({ setUserdata }) {
               <div className="hidden md:flex items-center gap-4">
                 <Link to="/user/signin" className="text-white font-medium" onClick={() => localStorage.removeItem('authJwtToken')}>Logout</Link>
                 <span className="text-white font-medium">Hello! <span className="hidden md:inline-block">{userName.split(" ")[0]}</span></span>
-                <img className="w-10 h-10 rounded-full" src="https://rashhworld.github.io/assets/images/profile.webp" />
+                <img className="w-10 h-10 rounded-full" src="https://rashhworld.github.io/assets/images/profile.webp" alt="profile image" />
               </div>
               <div className="block md:hidden">
-                <img className="w-10 h-10 rounded-full" id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" src="https://rashhworld.github.io/assets/images/profile.webp" />
+                <img className="w-10 h-10 rounded-full" id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" src="https://rashhworld.github.io/assets/images/profile.webp" alt="profile image" />
                 <div id="dropdownAvatar" className="z-10 hidden bg-red-500 text-white divide-y divide-gray-100 rounded me-2">
                   <p className="px-4 py-2 font-medium"><span>Hello!</span><br />{userName}</p>
                   <p className="px-4 py-2 font-medium"><Link to="/user/signin" onClick={() => localStorage.removeItem('authJwtToken')}>Logout</Link></p>

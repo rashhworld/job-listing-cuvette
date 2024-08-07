@@ -1,7 +1,6 @@
 export const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
+    "Bootstrap",
+    "Tailwind",
     "React.js",
     "Node.js",
     "Express.js",
