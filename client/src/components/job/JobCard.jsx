@@ -7,13 +7,13 @@ function JobCard({ userData, JobData }) {
       {JobData.length > 0 ? JobData.map((data, index) => (
         <div key={index} className="flex flex-col md:flex-row justify-between md:items-center gap-4 p-3 md:p-6 job-card">
           <div className="flex gap-3 md:gap-6">
-            <div>
+            <div className="flex-shrink-0 mt-1.5">
               <img src={data.companyLogo} width={40} alt="company logo" />
             </div>
             <div className="flex flex-col gap-2 font-semibold">
               <p className="font-medium text-xl">{data.jobPosition}</p>
               <p className="flex gap-5 text-gray-500">
-                <span className="flex gap-2">{data.jobDuration}</span>
+                <span>{data.jobDuration}</span>
                 <span>₹{data.monthlySalary}</span>
                 <span>{data.jobLocation}</span>
               </p>
